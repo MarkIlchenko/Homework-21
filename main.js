@@ -142,22 +142,22 @@ const slider = (function(){
             prevButton = createHTMLElement("button", "prev-control", "Prev");
             prevButton.addEventListener("click", () => updateItemsInfo(itemsInfo.position.current - 1))
 
-            autoButton = createHTMLElement("button", "auto-control", "Auto");
-            autoButton.addEventListener("click", () => {
-                intervalId = setInterval(function(){
-                    if (itemsInfo.position.current < itemsInfo.position.max) {
-                        itemsInfo.update(itemsInfo.position.current + 1);
-                    } else {
-                        itemsInfo.reset();
-                    }
-                    _slideItem();
-                }, itemsInfo.intervalSpeed)
-            })
+            // autoButton = createHTMLElement("button", "auto-control", "Auto");
+            // autoButton.addEventListener("click", () => {
+            //     intervalId = setInterval(function(){
+            //         if (itemsInfo.position.current < itemsInfo.position.max) {
+            //             itemsInfo.update(itemsInfo.position.current + 1);
+            //         } else {
+            //             itemsInfo.reset();
+            //         }
+            //         _slideItem();
+            //     }, itemsInfo.intervalSpeed)
+            // })
 
             nextButton = createHTMLElement("button", "next-control", "Next");
             nextButton.addEventListener("click", () => updateItemsInfo(itemsInfo.position.current + 1))
-
-            controlsWrapper.append(prevButton, autoButton, nextButton);
+            // autoButton,
+            controlsWrapper.append(prevButton, nextButton);
             slider.append(controlsWrapper);
         }
     }
